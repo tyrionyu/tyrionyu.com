@@ -82,5 +82,4 @@ categories: 经验
 
 表单输入是最烦躁的工作，设计一个比较有意思的输入体验可以让整个系统在用户体验上提升一层。以上列出的一些规则，其实无非就是一点，让用户更容易的输入。在这个基础上，如果我们还能引入一些趣味性，那将是表单设计上更上层的设计模式。
 
-
-原文地址：https://uxdesign.cc/design-better-forms 原作者：Andrew Coyle
+原文地址：<https://uxdesign.cc/design-better-forms> 原作者：Andrew Coyle

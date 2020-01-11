@@ -10,7 +10,7 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 ### Create a new post
 
 ``` bash
-$ hexo new "My New Post"
+hexo new "My New Post"
 ```
 
 More info: [Writing](https://hexo.io/docs/writing.html)
@@ -22,21 +22,23 @@ More info: [Writing](https://hexo.io/docs/writing.html)
 #### 1、创建草稿
 
 ``` bash
-$ hexo new draft "Title"
+hexo new draft "Title"
 ```
 
 会在`source/_drafts`文件夹目录下面生成一个Title.md的文件。但是这个文件不被显示在页面上，链接也访问不到。也就是说如果你想把某一篇文章移除显示，又不舍得删除，可以把它移动到drafts目录之中。或者你还没有写好，可以把他理解为是新建一个草稿文件。
 
 #### 2、预览草稿
+
 ``` bash
-$ hexo s --drafts
+hexo s --drafts
 ```
 
 会强行预览草稿。
 
 #### 3、把草稿文章或页面变成文章
+
 ``` bash
-$ hexo publish draft "Title"
+hexo publish draft "Title"
 ```
 
 将草稿文件移到`source/_posts`文件夹下面。发布命令格式：`hexo publish [layout] <filename>`，layout有三个值。`post`、`page`、`draft`。
@@ -44,7 +46,7 @@ $ hexo publish draft "Title"
 ### Run server
 
 ``` bash
-$ hexo server
+hexo server
 ```
 
 More info: [Server](https://hexo.io/docs/server.html)
@@ -52,7 +54,7 @@ More info: [Server](https://hexo.io/docs/server.html)
 ### Generate static files
 
 ``` bash
-$ hexo generate
+hexo generate
 ```
 
 More info: [Generating](https://hexo.io/docs/generating.html)
@@ -60,7 +62,7 @@ More info: [Generating](https://hexo.io/docs/generating.html)
 ### Deploy to remote sites
 
 ``` bash
-$ hexo deploy
+hexo deploy
 ```
 
 More info: [Deployment](https://hexo.io/docs/deployment.html)
