@@ -134,5 +134,4 @@ deploy:
   type: git
   repo:
     github: git@github.com:tyrionyu/tyrionyu.github.io.git
-    coding: git@e.coding.net:tyrionyu/blog.git
   branch: master
