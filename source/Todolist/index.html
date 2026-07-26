@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>待办事项管理</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 登录视图（未登录时显示） -->
+  <main class="auth-view" id="loginView">
+    <div class="auth-card">
+      <h1>待办事项</h1>
+      <p class="subtitle">登录后，多台设备共享同一份任务</p>
+      <form class="auth-form" id="authForm" autocomplete="off">
+        <input type="email" id="authEmail" class="auth-input" placeholder="邮箱" required />
+        <input type="password" id="authPassword" class="auth-input" placeholder="密码（注册时自行设置）" minlength="6" required />
+        <div class="auth-actions">
+          <button type="button" class="btn btn-primary" id="loginBtn">登录</button>
+          <button type="button" class="btn btn-ghost" id="signupBtn">注册</button>
+        </div>
+        <p class="auth-msg" id="authMsg"></p>
+      </form>
+    </div>
+  </main>
+
+  <!-- 主应用（登录后显示） -->
+  <main class="app hidden" id="mainView">
+    <header class="app-header">
+      <div class="header-top">
+        <h1>待办事项</h1>
+        <div class="user-bar">
+          <span class="user-email" id="userEmail"></span>
+          <button class="btn btn-ghost btn-sm" id="logoutBtn">退出</button>
+        </div>
+      </div>
+      <p class="subtitle" id="summaryText">共 0 项任务</p>
+    </header>
+
+    <!-- 任务表单：添加 / 编辑 -->
+    <form class="task-form" id="taskForm" autocomplete="off">
+      <div class="form-row form-row-main">
+        <input
+          type="text"
+          id="titleInput"
+          class="input-title"
+          placeholder="输入任务标题…"
+          maxlength="100"
+          required
+        />
+      </div>
+      <div class="form-row form-row-meta">
+        <label class="field">
+          <span class="field-label">优先级</span>
+          <select id="priorityInput">
+            <option value="high">高</option>
+            <option value="medium" selected>中</option>
+            <option value="low">低</option>
+          </select>
+        </label>
+        <label class="field">
+          <span class="field-label">截止日期</span>
+          <input type="date" id="dueDateInput" />
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="submitBtn">添加任务</button>
+          <button type="button" class="btn btn-ghost hidden" id="cancelEditBtn">取消</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- 工具栏：筛选 + 排序 -->
+    <div class="toolbar">
+      <div class="filter-tabs" role="tablist">
+        <button class="tab active" data-filter="all" role="tab">
+          全部 <span class="badge" id="countAll">0</span>
+        </button>
+        <button class="tab" data-filter="active" role="tab">
+          未完成 <span class="badge" id="countActive">0</span>
+        </button>
+        <button class="tab" data-filter="completed" role="tab">
+          已完成 <span class="badge" id="countCompleted">0</span>
+        </button>
+      </div>
+      <label class="sort-field">
+        <span class="field-label">排序</span>
+        <select id="sortSelect">
+          <option value="priority">按优先级</option>
+          <option value="date">按截止日期</option>
+        </select>
+      </label>
+    </div>
+
+    <!-- 任务列表 -->
+    <ul class="task-list" id="taskList"></ul>
+    <div class="empty-state hidden" id="emptyState">
+      <p>暂无任务</p>
+      <p class="empty-hint">在上方输入标题，添加你的第一项待办</p>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
