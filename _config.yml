@@ -37,6 +37,7 @@ skip_render:
   - "price/**"
   - "list/**"
   - "packing/**"
+  - "snake/**"
 
 # Writing
 new_post_name: :year-:month-:day-:title.md # File name of new posts
